@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshay Jain - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #101010;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e63946;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            font-size: 2rem;
+        }
+
+        .hero-text span {
+            color: #e63946;
+        }
+
+        .hero-img img {
+            width: 80%;
+            max-width: 400px;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 80%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #e63946;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .skill {
+            text-align: center;
+            margin: 15px;
+        }
+
+        .skill img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1 1 300px;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #1a1a2e;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+        }
+
+        .but {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .butt {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .butt a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .butt:hover {
+            background-color: #d62828;
+        }
+
+        img:hover {
+            filter: drop-shadow(14px 14px 19px white);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-img {
+                margin-top: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                background: #1a1a2e;
+                width: 100%;
+                cursor: pointer;
+                display: none;
+                border: 2px solid white;
+                top: 80px;
+                left: 0;
+            }
+
+            nav:hover ul {
+                display: flex;
+            }
+
+            img:hover {
+                filter: drop-shadow(14px 14px 19px white);
+                cursor: pointer;
+            }
+        }
+
+        .internships-list,
+        .certificates-list,
+        .courses-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .certificate,
+        .course {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1 1 300px;
+        }
+
+        .internship {
+            background: #1a1a2e;
+            padding: 20px;
+            height: 500px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1 1 300px;
+        }
+
+        .certificate img {
+            width: 70%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .internship img {
+            width: 50%;
+            height: 370px;
+            border-radius: 10px;
+        }
+
+        .internship p,
+        .certificate p,
+        .course p {
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .internship img {
+            width: 90%;
+            height: 180px;
+            border-radius: 10px;
+        }
+        #name{
+           margin-left: 50px;
+           cursor: pointer;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 id="name">Lakshay's Portfolio</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#courses">Courses Done</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            Hi, My name is <span class="purple">Lakshay</span>
+            <div>and I am a Passionate Computer Science <span>Engineer</span> and I know</div>
+            <span id="element"></span>
+            <div class="but">
+                <button class="butt" id="downloadButton">Download Resume</button>
+                <a id="hiddenDownloadLink" style="display:none"></a>
+                <button class="butt"><a
+                        href="https://www.linkedin.com/in/its-lakshay-jain-2004abc?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Visit
+                        LinkedIn</a></button>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="img/one.png" alt="Your Image">
+        </div>
+    </section>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <p>Hello and welcome to my portfolio website! I'm Lakshay Jain, a passionate and driven computer science student
+            eager to embark on a journey in the world of technology. As I'm pursuing graduation with a Bachelor's degree
+            in Computer Science, I am excited to share my background, skills, and aspirations with you.</p>
+        <h3>My Educational Journey:</h3>
+        <p>My love for computers and technology began at an early age when I got my first PC. This curiosity and
+            fascination led me to pursue a degree in Computer Science. I'm pursuing graduation from MITRC College with a
+            strong foundation in computer science principles, programming languages, and algorithms. Throughout my
+            academic journey, I consistently strived for excellence and maintained an 8.5 CGPA. I have done my schooling
+            from Oswal Public School, Alwar and I have scored 95% in my senior secondary.</p>
+        <h3>My Passion for Coding:</h3>
+        <p>Coding is not just a skill; it's my creative outlet and a way to solve real-world problems. I am proficient
+            in several programming languages, including C, Python, and C++, HTML, CSS, JavaScript, SQL, and I am
+            constantly expanding my knowledge by taking on personal coding projects. These projects have not only
+            sharpened my programming skills but have also given me the opportunity to tackle unique challenges and find
+            innovative solutions.</p>
+    </section>
+
+    <section id="skills">
+        <h1>My Skills</h1>
+        <div class="skills">
+            <div class="skill">
+                <img src="img/html.png" alt="HTML">
+                <h3>HTML</h3>
+            </div>
+            <div class="skill">
+                <img src="img/css.png" alt="CSS">
+                <h3>CSS</h3>
+            </div>
+            <div class="skill">
+                <img src="img/js.png" alt="JavaScript">
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill">
+                <img src="img/react.png" alt="React">
+                <h3>React</h3>
+            </div>
+            <div class="skill">
+                <img src="img/node.png" alt="Node.js">
+                <h3>Node.js</h3>
+            </div>
+            <div class="skill">
+                <img src="img/sql.png" alt="SQL">
+                <h3>SQL</h3>
+            </div>
+            <div class="skill">
+                <img src="img/py.png" alt="Python">
+                <h3>Python</h3>
+            </div>
+            <div class="skill">
+                <img src="img/mongo.png" alt="MongoDB">
+                <h3>MongoDB</h3>
+            </div>
+            <div class="skill">
+                <img src="img/ml.png" alt="Machine Learning">
+                <h3>Machine Learning</h3>
+            </div>
+            <div class="skill">
+                <img src="img/dsa.png" alt="DSA">
+                <h3>Data Structures & Algorithms</h3>
+            </div>
+            <div class="skill">
+                <img src="img/bi.png" alt="PowerBi">
+                <h3>PowerBi</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h1>Projects</h1>
+        <p>Check out some of my work below:</p>
+        <div class="projects-list">
+            <div class="project">
+                <img src="img/p1.png" alt="Project 2">
+                <h3>Laptop-Price-Pridictor</h3>
+                <p>Developed a Laptop Price Predictor tool using machine learning. <br> This tool can predict the price of a
+                    laptop based on user-selected configurations like screen size, RAM size, CPU etc. <br>
+                    Built a user-friendly interface that allows users to easily select their desired laptop
+                    configurations and receive a predicted price.
+                    This project demonstrates my skills in machine learning, data analysis, and web development.</p>
+                <h2><a href="https://github.com/LakshayJain25/laptop_price_pridiction.git" style="color: white;">GitHub</a></h2>
+            </div>
+            <div class="project">
+                <img src="img/p1.png" alt="Project 2">
+                <h3>Laptop-Price-Pridictor</h3>
+                <p>Developed a Laptop Price Predictor tool using machine learning. <br> This tool can predict the price of a
+                    laptop based on user-selected configurations like screen size, RAM size, CPU etc. <br>
+                    Built a user-friendly interface that allows users to easily select their desired laptop
+                    configurations and receive a predicted price.
+                    This project demonstrates my skills in machine learning, data analysis, and web development.</p>
+                <h2><a href="https://github.com/LakshayJain25/laptop_price_pridiction.git" style="color: white;">GitHub</a></h2>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="internships">
+        <h1>Internships</h1>
+        <div class="internships-list">
+            <div class="internship">
+                <img src="img/i1.png" alt="Internship 1">
+                <h3>Data-Science Internship</h3>
+                <p>Data Science Internship at TreeTech Consultancy (July 2023 - August 2023). Gained hands-on experience
+                    in data science concepts and applied them to real-world projects.</p>
+            </div>
+            <!-- Add more internships as needed -->
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h1>Certificates & Achievements</h1>
+        <div class="certificates-list">
+            <div class="certificate">
+                <img src="img/c1.jpg" alt="Certificate 1">
+                <b>
+                    <h3>Smart India Hackathon</h3>
+                </b>
+                <p>Participated in the Smart India Hackathon 2023, showcasing innovative solutions in a national-level
+                    competition. Demonstrated proficiency in software development and teamwork.</p>
+            </div>
+            <div class="certificate">
+                <img src="img/c2.jpg" alt="Certificate 2">
+                <h3>Mock-Placement-Activity</h3>
+                <p>Achieved a top position in the Mock Placement Activity, 2024 organized by the Department of Computer
+                    Science & Artificial Intelligence at MITRC</p>
+            </div>
+            <!-- Add more certificates as needed -->
+        </div>
+    </section>
+
+    <section id="courses">
+        <h1>Courses Done</h1>
+        <div class="courses-list">
+            <div class="course">
+                <h3>Successfully Completed RKCL's Basic Python Programming Course</h3>
+                <p>Acquired foundational knowledge of Python programming concepts, including syntax, data structures,
+                    and control flow</p>
+            </div>
+            <div class="course">
+                <h3>Machine Learning Foundations</h3>
+                <p>Successfully completed "Machine Learning" offered by Great Learning Academy. Learned about the basics
+                    of machine learning, including its applications and algorithms.</p>
+            </div>
+            <div class="course">
+                <h3>Introduction to Data Science with Edureka</h3>
+                <p> Earned a certificate upon completion of Edureka's Data Science Full Course. Gained exposure to key
+                    data science concepts and tools.</p>
+            </div>
+            <!-- Add more courses as needed -->
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/its-lakshay-jain-2004abc?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="img/ln.png" alt="LinkedIn"></a>
+            <a href="lakshayjain9695@gmail.com" target="_blank"><img src="img/mail.png" alt="Email"></a>
+            <a href="https://github.com/LakshayJain25" target="_blank"><img src="img/git.png" alt="GitHub"></a>
+        </div>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web development', ' data science', ' python development', 'data analysis', 'coding...'],
+            typeSpeed: 50,
+        });
+        // Function to trigger file download
+        function downloadFile() {
+            // Replace 'your_file_url' with the actual URL of the file you want to download
+            const fileUrl = 'resume.pdf';
+
+            // Create a hidden link element
+            const downloadLink = document.getElementById('hiddenDownloadLink');
+
+            // Set the href attribute of the hidden link to the file URL
+            downloadLink.href = fileUrl;
+
+            // Set the download attribute to specify the desired file name for the downloaded file
+            downloadLink.download = 'resume.pdf';
+
+            // Simulate a click event on the hidden link to trigger the download
+            downloadLink.click();
+        }
+
+        // Attach the downloadFile function to the button's click event
+        const downloadButton = document.getElementById('downloadButton');
+        downloadButton.addEventListener('click', downloadFile);
+    </script>
+</body>
+
+</html>
